@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Owen Wilson Wow Generator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main>
-    <h1 id="title">The Owen Wilson Wow Generator!</h1>
-
-    <div id="video">
-      <video src="https://videos.ctfassets.net/bs8ntwkklfua/10rQAyWuCwRxpxCmYxOePo/9d44cfeb73bb3bbae6fcf9b48097bf15/Cars_3_Wow_8_480p.mp4"controls>
-        Your browser does not support the video tag, please update!
-      </video>
-      <div id="video-info">
-        <h2>Cars 3 - 2017</h2>
-        <p>Lighting McQueen</p>
-        <p>Wow 8 of 10 total</p>
-        <img src="https://images.ctfassets.net/bs8ntwkklfua/43fOBsgY8iOJL0dijvFnfl/ea361efc5131a859c173ab5dd3fdfe1e/Cars_3_Poster.jpg" alt="Movie Poster" width="auto" height="400px">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owen Wilson Wow Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 id="main-header">The Owen Wilson Wow Generator!</h1>
+      </header>
+      <div id="video">
+        <video
+          id="video-player"
+          src="https://videos.ctfassets.net/bs8ntwkklfua/10rQAyWuCwRxpxCmYxOePo/9d44cfeb73bb3bbae6fcf9b48097bf15/Cars_3_Wow_8_480p.mp4"
+          controls
+        >
+          Your browser does not support the video tag, please update your
+          browser
+        </video>
+        <div id="video-info">
+          <h2>Cars 3 - 2017</h2>
+          <p>Character: Lighting McQueen</p>
+          <p>Wow 8 of 10</p>
+          <img
+            src="https://images.ctfassets.net/bs8ntwkklfua/43fOBsgY8iOJL0dijvFnfl/ea361efc5131a859c173ab5dd3fdfe1e/Cars_3_Poster.jpg"
+            alt="Movie Poster"
+            width="auto"
+            height="400px"
+          />
+        </div>
+        <div id="video-controls" class="controls">
+          <button id="play" class="controls" type="button">▶</button>
+          <button id="randomizer" class="controls" type="button">
+            Random Wow!
+          </button>
+          <select id="movie-select">
+            <option>Default: All Movies</option>
+          </select>
+          <button id="like" class="controls" type="button">❤️</button>
+        </div>
       </div>
-    </div>
-
-    <button 
-    id="randomizer"
-    class="controls"
-    type="button">
-    Random Wow!
-    </button>
-    <button
-      id="like"
-      class="controls"
-      type="button">
-      ❤️
-    </button>
-    <div id="saved-videos">
-    </div>
-  </main>
-  <script src="script.js"></script>
-</body>
+      <div id="saved-videos">saved videos go here</div>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
