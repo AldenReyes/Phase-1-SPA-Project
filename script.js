@@ -28,6 +28,7 @@ const videoLoad = (video) => {
   h2.textContent = `${video.movie} - ${video.year} - Wow #${video.current_wow_in_movie} of ${video.total_wows_in_movie}`
   img.setAttribute("src", video.poster)
   videoPlayer.setAttribute("src", video.video["360p"])
+  return video
 }
 
 const videoPlay = () => {
@@ -44,11 +45,21 @@ const videoLike = () => {
   console.log("like")
 }
 
+const populateDropdown = (URL) => {
+  const select = document.getElementById("movie-select")
+  URL[0].forEach(movie => {
+    const option = document.createElement("option")
+    option.textContent = movie["movie"]
+    select.appendChild(option)
+  })
+  return URL
+}
+
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
-document.getElementById("randomize").addEventListener("click", () => (videoRandomize(URL).then(movie => videoLoad(movie)).then(videoPlay)))
+document.getElementById("randomize").addEventListener("click", () => (fetchAllVideos(URL).then(videos => videoRandomize(videos)).then(movie => videoLoad(movie)).then(videoPlay)))
 document.getElementById("like").addEventListener("click", videoLike)
 
 //call functions
-fetchAllVideos(URL).then(movies => videoRandomize(movies)).then(movie => videoLoad(movie))
+fetchAllVideos(URL).then(videos => populateDropdown(videos)).then(videos => videoRandomize(videos)).then(video => videoLoad(video))
 
