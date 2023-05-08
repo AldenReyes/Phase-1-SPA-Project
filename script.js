@@ -14,7 +14,8 @@ const URL = [
 const savedVideos = [
   "http://localhost:3000/savedclips"
 ]
-const RANDOMIZE_BTN = document.getElementById("randomize")
+let videoOnPage = null
+
 
 const fetchVideos = async (URL, selectedName) => {
   const response = await fetch(URL)
@@ -33,7 +34,7 @@ const videoLoad = (video) => {
   h2.textContent = `${video.movie} - ${video.year} - Wow #${video.current_wow_in_movie} of ${video.total_wows_in_movie}`
   img.setAttribute("src", video.poster)
   videoPlayer.setAttribute("src", video.video["360p"])
-  return video
+  videoOnPage = video
 }
 
 const videoPlay = () => {
@@ -61,6 +62,11 @@ const populateDropdown = (URL) => {
   return URL
 }
 
+const handleLike = () => {
+  console.log("like")
+  console.log(videoOnPage)
+}
+
 const handleRandomizeBtn = () => {
   const selectedNameValue = document.getElementById("movie-select").value
   fetchVideos(URL, selectedNameValue)
@@ -68,7 +74,6 @@ const handleRandomizeBtn = () => {
   .then(movie => videoLoad(movie))
   .then(videoPlay)
 }
-
 
 //call functions
 fetchVideos(URL)
@@ -78,9 +83,8 @@ fetchVideos(URL)
 
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
-
-RANDOMIZE_BTN.addEventListener("click", handleRandomizeBtn)
-
+document.getElementById("like").addEventListener("click", handleLike)
+document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
 document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
 
