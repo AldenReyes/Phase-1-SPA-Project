@@ -1,5 +1,5 @@
 {
-  "1996": [
+  "movies": [
   {
       "movie": "Bottle Rocket",
       "year": 1996,
@@ -62,8 +62,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/5xUOifToSk7ri9HUUZaPm4/07205e779c041f9702e86c2b7e3bfcff/Bottle_Rocket_Wow_3.mp3",
       "id": "3"
-  }],
-  "1999": [
+  },
   {
       "movie": "The Haunting",
       "year": 1999,
@@ -189,9 +188,8 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/1KRkfdHn1wFNjk7PqiG8me/d2cd53c422fcfbb2de87f845b65400bc/Breakfast_of_Champions.mp3",
       "id": "9"
-  }],
-  "2000": [
-    {
+  },
+  {
       "movie": "Shanghai Noon",
       "year": 2000,
       "release_date": "2000-05-23",
@@ -253,8 +251,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/2SgnPN23fk4EPQ7yuSQDiJ/3c0f409e7e775bebff2c526bd42dc159/Meet_the_Parents_Wow_2.mp3",
       "id": "12"
-  }],
-  "2001": [
+  },
   {
       "movie": "Zoolander",
       "year": 2001,
@@ -275,8 +272,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/5E7gIINsdQjBa2HtCPDkgL/6bbd5a1812ed7c8b5e82324d199ca579/Zoolander_Wow.mp3",
       "id": "13"
-  }],
-  "2002": [
+  },
   {
       "movie": "I Spy",
       "year": 2002,
@@ -339,8 +335,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/L3lRv8vIlHHnWatlWY7Xp/dbff71b4a18f4a507367aaef111f1202/I_Spy_Wow_3.mp3",
       "id": "16"
-  }],
-  "2003" : [
+  },
   {
       "movie": "Shanghai Knights",
       "year": 2003,
@@ -424,8 +419,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/50j8j4QZ9ruslduUazL82Y/cad5fabd2a1080de0609adec4bd7c3ab/Shanghai_Knights_Wow_4.mp3",
       "id": "20"
-  }],
-  "2004" : [
+  },
   {
       "movie": "The Big Bounce",
       "year": 2004,
@@ -488,8 +482,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/3ausSCSm1FfjOdBAe4RZE4/b961140dd002c414672d14bc6341afc0/Starsky___Hutch_Wow.mp3",
       "id": "23"
-  }],
-  "2005" : [
+  },
   {
       "movie": "Wedding Crashers",
       "year": 2005,
@@ -615,8 +608,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/3R4mpZqOXNEPXdL4B9FeOt/f9d04f53ab3f884005c39e463bfebc4c/Wedding_Crashers_Wow_6.mp3",
       "id": "29"
-  }],
-  "2006" : [
+  },
   {
       "movie": "Cars",
       "year": 2006,
@@ -742,8 +734,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/4InRmdCPksnHoD2Lg6ZPeT/342441d66f5e148f58de78dbdc347c5a/You__Me_and_Dupree_Wow.mp3",
       "id": "35"
-  }],
-  "2007" : [
+  },
   {
       "movie": "The Darjeeling Limited",
       "year": 2007,
@@ -764,8 +755,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/59dP22lz2DcIjABVaFm8vu/f644b85fc36ed56b631772a0fdad9650/The_Darjeeling_Limited_Wow.mp3",
       "id": "36"
-  }],
-  "2008" : [
+  },
   {
       "movie": "Drillbit Taylor",
       "year": 2008,
@@ -870,8 +860,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/63iKQz8ZwARtRQGBhWf9rR/155dc25f5d0a98f12c7d4656828b1b2a/Marley___Me_Wow_3.mp3",
       "id": "41"
-  }],
-  "2010" : [
+  },
   {
       "movie": "Marmaduke",
       "year": 2010,
@@ -997,8 +986,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/2et2yTzkvbv0Le61jdwd3/41dbcc6fb05f49d1449a8c921843f695/Little_Fockers_Wow_2.mp3",
       "id": "47"
-  }],
-  "2011" : [
+  },
   {
       "movie": "Hall Pass",
       "year": 2011,
@@ -1418,8 +1406,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/1dXEYZQP1Fl6CX1roy7ZAH/f31b90a6f961dcc16c16b294f4faf664/The_Big_Year_Wow_3.mp3",
       "id": "67"
-  }],
-  "2013" : [
+  },
   {
       "movie": "The Internship",
       "year": 2013,
@@ -1629,8 +1616,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/39Pjsj4HKXYIxjh7lXZJVU/535d60d67585551b1920b8e239ebd276/Are_You_Here_Wow_2.mp3",
       "id": "77"
-  }],
-  "2014" : [
+  },
   {
       "movie": "Night at the Museum: Secret of the Tomb",
       "year": 2014,
@@ -1651,8 +1637,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/5o3CSC67KEoIojYH0UMghP/fbf9dea48ac1914eb7f7bffca802b012/Night_at_the_Museum_Secret_of_the_Tomb_Wow.mp3",
       "id": "78"
-  }],
-  "2015" : [
+  },
   {
       "movie": "No Escape",
       "year": 2015,
@@ -1694,8 +1679,7 @@
       },
       "audio": "https://assets.ctfassets.net/bs8ntwkklfua/3DIDCnZowVtlwkBSAzuuJT/40ddcd7966013e6e8bdc18d933a84ab5/No_Escape_Wow_2.mp3",
       "id": "80"
-  }],
-  "2017" : [
+  },
   {
       "movie": "Cars 3",
       "year": 2017,
