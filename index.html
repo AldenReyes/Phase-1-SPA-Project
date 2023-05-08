@@ -29,15 +29,22 @@
           <h2></h2>
           <p></p>
         </div>
-        <div id="video-controls" class="controls">
+        <div id="video-control-buttons" class="controls">
           <button id="play" class="controls" type="button">▶</button>
           <button id="randomize" class="controls" type="button">
             Random Wow!
           </button>
-          <select id="movie-select">
-            <option value="default" selected>Default: All Movies</option>
-          </select>
           <button id="like" class="controls" type="button">❤️</button>
+          <br>
+          <input type="radio" id="all" name="random-select" value="all" checked>
+          <label for="all">From All Movies</label>
+          <br>
+          <input type="radio" id="by-movie" name="random-select" value="by-year">
+          <label for="by-movie">From Specific Movie
+            <select id="movie-select">
+              <option></option>
+            </select>
+          </label>
         </div>
         <div id="poster">
           <img
