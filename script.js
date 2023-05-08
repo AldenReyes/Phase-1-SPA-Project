@@ -11,8 +11,10 @@ Outline of functions
 const URL = [
   "http://localhost:3000/clips",
 ];
+const RANDOMIZE_BTN = document.getElementById("randomize")
 
-const fetchAllVideos = async (URL) => {
+
+const fetchVideos = async (URL) => {
   let all = []
   const response = await fetch(URL)
   const movies = await response.json()
@@ -37,8 +39,8 @@ const videoPlay = () => {
 }
 
 const videoRandomize = (URL) => {
-  const randomMovieIndex = Math.floor(Math.random() * URL[0].length)
-  return URL[0][randomMovieIndex]
+  const randomMovieIndex = Math.floor(Math.random() * URL.flat().length)
+  return URL.flat()[randomMovieIndex]
 }
 
 const videoLike = () => {
@@ -53,19 +55,28 @@ const populateDropdown = (URL) => {
     if (!uniqueNames[movie["movie"]]){
     const option = document.createElement("option")
     option.setAttribute("value", movie["movie"])
-    option.textContent = movie["movie"]
+    option.textContent = `${movie["movie"]} - ${movie["total_wows_in_movie"]} total`
     select.appendChild(option)
     uniqueNames[movie["movie"]] = true
   }})
-  console.log(uniqueNames)
   return URL
 }
 
-//event listeners
-document.getElementById("play").addEventListener("click", videoPlay)
-document.getElementById("randomize").addEventListener("click", () => (fetchAllVideos(URL).then(videos => videoRandomize(videos)).then(movie => videoLoad(movie)).then(videoPlay)))
-document.getElementById("like").addEventListener("click", videoLike)
+
+
 
 //call functions
-fetchAllVideos(URL).then(videos => populateDropdown(videos)).then(videos => videoRandomize(videos)).then(video => videoLoad(video))
+fetchVideos(URL).then(videos => populateDropdown(videos)).then(videos => videoRandomize(videos)).then(video => videoLoad(video))
+//event listeners
+document.getElementById("play").addEventListener("click", videoPlay)
+
+RANDOMIZE_BTN.addEventListener("click", () => (fetchVideos(URL)
+.then(videos => videoRandomize(videos, videoSelection))
+.then(movie => videoLoad(movie))
+.then(videoPlay)))
+
+document.getElementById("like").addEventListener("click", videoLike)
+
+document.getElementById("movie-select").addEventListener("change", ((e) => console.log(e.target.value)))
+
 
