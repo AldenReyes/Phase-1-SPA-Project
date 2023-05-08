@@ -47,11 +47,17 @@ const videoLike = () => {
 
 const populateDropdown = (URL) => {
   const select = document.getElementById("movie-select")
-  URL[0].forEach(movie => {
+  const uniqueNames = {}
+  URL[0].map(movie => {
+    //if name is not unique, execute function
+    if (!uniqueNames[movie["movie"]]){
     const option = document.createElement("option")
+    option.setAttribute("value", movie["movie"])
     option.textContent = movie["movie"]
     select.appendChild(option)
-  })
+    uniqueNames[movie["movie"]] = true
+  }})
+  console.log(uniqueNames)
   return URL
 }
 
