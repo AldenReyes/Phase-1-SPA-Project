@@ -12,7 +12,7 @@ const URL = [
   "http://localhost:3000/clips",
 ];
 
-const fetchAllMovies = async (URL) => {
+const fetchAllVideos = async (URL) => {
   let all = []
   const response = await fetch(URL)
   const movies = await response.json()
@@ -20,7 +20,7 @@ const fetchAllMovies = async (URL) => {
   return all
 }
 
-const loadVideo = (video) => {
+const videoLoad = (video) => {
   const videoInfo = document.getElementById("video-info")
   const h2 = videoInfo.querySelector("h2")
   const img = document.getElementById("poster").querySelector("img")
@@ -46,9 +46,9 @@ const videoLike = () => {
 
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
-document.getElementById("randomize").addEventListener("click", () => (videoRandomize(URL).then(movie => loadVideo(movie)).then(videoPlay)))
+document.getElementById("randomize").addEventListener("click", () => (videoRandomize(URL).then(movie => videoLoad(movie)).then(videoPlay)))
 document.getElementById("like").addEventListener("click", videoLike)
 
 //call functions
-fetchAllMovies(URL).then(movies => videoRandomize(movies)).then(movie => loadVideo(movie))
+fetchAllVideos(URL).then(movies => videoRandomize(movies)).then(movie => videoLoad(movie))
 
