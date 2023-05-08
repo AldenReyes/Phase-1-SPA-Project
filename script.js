@@ -13,13 +13,13 @@ const URL = [
 ];
 const RANDOMIZE_BTN = document.getElementById("randomize")
 
-
-const fetchVideos = async (URL) => {
-  let all = []
+const fetchVideos = async (URL, selectedName) => {
   const response = await fetch(URL)
   const movies = await response.json()
-  all.push(movies)
-  return all
+  if (selectedName) {
+    return movies.filter(movie => movie.movie === selectedName)
+  }
+  return movies
 }
 
 const videoLoad = (video) => {
@@ -50,7 +50,7 @@ const videoLike = () => {
 const populateDropdown = (URL) => {
   const select = document.getElementById("movie-select")
   const uniqueNames = {}
-  URL[0].map(movie => {
+  URL.map(movie => {
     //if name is not unique, execute function
     if (!uniqueNames[movie["movie"]]){
     const option = document.createElement("option")
@@ -62,7 +62,13 @@ const populateDropdown = (URL) => {
   return URL
 }
 
-
+const handleRandomizeBtn = () => {
+  const selectedNameValue = document.getElementById("movie-select").value
+  fetchVideos(URL, selectedNameValue)
+  .then(videos => videoRandomize(videos))
+  .then(movie => videoLoad(movie))
+  .then(videoPlay)
+}
 
 
 //call functions
@@ -70,13 +76,9 @@ fetchVideos(URL).then(videos => populateDropdown(videos)).then(videos => videoRa
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
 
-RANDOMIZE_BTN.addEventListener("click", () => (fetchVideos(URL)
-.then(videos => videoRandomize(videos, videoSelection))
-.then(movie => videoLoad(movie))
-.then(videoPlay)))
+RANDOMIZE_BTN.addEventListener("click", handleRandomizeBtn)
 
 document.getElementById("like").addEventListener("click", videoLike)
 
-document.getElementById("movie-select").addEventListener("change", ((e) => console.log(e.target.value)))
 
 
