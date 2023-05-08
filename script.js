@@ -16,7 +16,7 @@ const loadVideo = (video) => {
   const videoInfo = document.getElementById("video-info")
   const h2 = videoInfo.querySelector("h2")
   const p = videoInfo.querySelector("p")
-  const img = videoInfo.querySelector("img")
+  const img = document.getElementById("poster").querySelector("img")
   const videoPlayer = document.getElementById("video-player")
   h2.textContent = `${video.movie} - ${video.year}`
   p.textContent = `Character: ${video.character} | Wow #${video.current_wow_in_movie} of ${video.total_wows_in_movie}`
