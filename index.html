@@ -17,14 +17,15 @@
         <h1 id="main-header">The Owen Wilson Wow Generator!</h1>
       </header>
       <div id="video">
+        <div class="video-container">
         <video
           id="video-player"
           src=""
-          controls
         >
           Your browser does not support the video tag, please update your
           browser
         </video>
+        </div>
         <div id="video-info">
           <h2></h2>
           <p></p>
@@ -36,26 +37,25 @@
           </button>
           <button id="like" class="controls" type="button">❤️</button>
           <br>
-          <input type="radio" id="all" name="random-select" value="all" checked>
-          <label for="all">From All Movies</label>
-          <br>
-          <input type="radio" id="by-movie" name="random-select" value="by-year">
-          <label for="by-movie">From Specific Movie
-            <select id="movie-select">
-              <option></option>
-            </select>
-          </label>
+            <label for="by-movie">Randomize from:
+              <select id="movie-select">
+                <option value="">All Movies - 91 total</option>
+              </select>
+            </label>
         </div>
-        <div id="poster">
-          <img
+      <div class="img-container">
+        <img
+            id="poster"
             src=""
             alt="Movie Poster"
             width="auto"
-            height="400px"
-          />
-        </div>
+            height="350px"
+        />
       </div>
-      <div id="saved-videos">saved videos go here</div>
+      </div>
+      <div id="saved-videos-container">
+        <h2>Saved Wows</h2>
+      </div>
     </main>
     <script defer src="script.js"></script>
   </body>

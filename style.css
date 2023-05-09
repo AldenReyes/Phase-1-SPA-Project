@@ -1,0 +1,22 @@
+.img-container {
+  height: auto;
+}
+#main-header {
+  text-align: center;
+}
+#saved-videos-container {
+  width: 200px;
+  height: 300px;
+  overflow: scroll;
+}
+#video {
+  display: grid;
+  place-items: center;
+}
+#video-control-buttons {
+  text-align: center;
+}
+#video-player {
+  width: 640px;
+  height: 360px;
+}
