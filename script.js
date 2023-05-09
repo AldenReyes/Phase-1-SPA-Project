@@ -16,7 +16,6 @@ const savedVideos = [
 ]
 let videoOnPage = null
 
-
 const fetchVideos = async (URL, selectedName) => {
   const response = await fetch(URL)
   const movies = await response.json()
@@ -62,9 +61,16 @@ const populateDropdown = (URL) => {
   return URL
 }
 
-const handleLike = () => {
-  console.log("like")
-  console.log(videoOnPage)
+const handleLike = async () => {
+fetch(savedVideos, {
+  method: "POST",
+  headers: {
+    "Accept": "application/json",
+    "Content-type": "application/json"
+  },
+  body: JSON.stringify(videoOnPage)
+})
+.then(console.log("posted video"))
 }
 
 const handleRandomizeBtn = () => {
@@ -87,4 +93,3 @@ document.getElementById("like").addEventListener("click", handleLike)
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
 document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
-
