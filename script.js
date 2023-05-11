@@ -61,6 +61,17 @@ const populateDropdown = (URL) => {
   return URL
 }
 
+const loadSidebar = (videos) => {
+  const sidebar = document.getElementById("saved-videos-container").querySelector("ul")
+  sidebar.innerHTML = ""
+  videos.map(video =>  {
+    const entry = document.createElement("li")
+    entry.textContent = `${video.movie} - #${video.current_wow_in_movie}`
+    sidebar.appendChild(entry)
+})
+  return videos
+}
+// handlers
 const handleLike = async () => {
 fetch(savedVideos, {
   method: "POST",
@@ -70,7 +81,9 @@ fetch(savedVideos, {
   },
   body: JSON.stringify(videoOnPage)
 })
-.then(console.log("posted video"))
+.then(res => res.json())
+.then(loadSidebar(await fetchVideos(savedVideos)))
+.catch(() => alert("You've already added this clip to your liked videos!"))
 }
 
 const handleRandomizeBtn = () => {
@@ -87,9 +100,13 @@ fetchVideos(URL)
 .then(videos => videoRandomize(videos))
 .then(video => videoLoad(video))
 
+
+fetchVideos(savedVideos)
+.then(videos => loadSidebar(videos))
+
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
 document.getElementById("like").addEventListener("click", handleLike)
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
-document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
-document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
+// document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
+// document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
