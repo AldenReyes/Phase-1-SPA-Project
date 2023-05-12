@@ -23,9 +23,11 @@ main {
 }
 
 footer {
+  align-self: flex-end;
+  position: relative;
   font-size:x-small;
-  text-align: justify;
-  margin: 22% 24% 3% 24%;
+  text-align: center;
+  margin: 22% 24% 1% 24%;
 }
 
 .controls {
@@ -41,23 +43,34 @@ button:hover {
 
 #poster {
   float: left;
-  margin-left: 10%;
-  padding: 1em;
-  border-radius: 25px;
+  margin-left: 5%;
+  padding: 0.5em;
+  border-radius: 20px;
 }
 
 #main-header {
   text-align: center;
-  margin-top: 0%;
 }
 
 #saved-videos-container {
-  width: 200px;
-  height: 350px;
+  height: 326px;
+  width: 226px;
   overflow-y: auto;
   float: right;
-  margin-right: 10%;
+  margin-top: 6px;
+  margin-right: 5%;
+  background-color: #ccd0da;
+  padding: 0.5em;
+  border-radius: 20px;
+}
 
+#saved-videos-container > h2 {
+  text-align: center;
+}
+
+#saved-videos-container > ul {
+  text-align: center;
+  padding: 1em;
 }
 
 #video > * {
