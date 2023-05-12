@@ -111,6 +111,18 @@ const handleRandomizeBtn = () => {
   .then(videoPlay)
 }
 
+const handleKeydown = (e) => {
+  if (e.key === "p") {
+    videoPlay()
+  }
+  if (e.key === "r") {
+    handleRandomizeBtn()
+  }
+  if (e.key === "l") {
+    loadSidebarAfterLike()
+  }
+}
+
 //call functions
 
 initialFetch()
@@ -120,17 +132,7 @@ fetchVideos(savedVideos)
 
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
-document.addEventListener("keydown", e => {
-  if (e.key === "p") {
-    videoPlay()
-  }
-  if (e.key === "r") {
-    initialFetch()
-  }
-  if (e.key === "l") {
-    loadSidebarAfterLike()
-  }
-})
+document.addEventListener("keydown", handleKeydown)
 document.getElementById("like").addEventListener("click", loadSidebarAfterLike)
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 // document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
