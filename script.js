@@ -67,10 +67,24 @@ const loadSidebar = (videos) => {
   sidebar.innerHTML = ""
   videos.map(video =>  {
     const entry = document.createElement("li")
+    entry.setAttribute("id", `${video.id}`)
     entry.textContent = `${video.movie} - #${video.current_wow_in_movie}`
     sidebar.appendChild(entry)
 })
   return videos
+}
+
+const initialFetch = () => {
+  fetchVideos(URL)
+  .then(videos => populateDropdown(videos))
+  .then(videos => videoRandomize(videos))
+  .then(video => videoLoad(video))
+}
+
+const loadSidebarAfterLike = async () => {
+    await handleLike()
+    fetchVideos(savedVideos)
+    .then(videos => loadSidebar(videos))
 }
 
 // handlers
@@ -85,12 +99,9 @@ const handleLike = async () => {
     body: JSON.stringify(videoOnPage)
 })
   const savedVideo = await response.json()
-  console.log(savedVideo)
 } catch (error) {
   alert("You've already added this clip to your liked videos!")
-}
-}
-
+}}
 
 const handleRandomizeBtn = () => {
   const selectedNameValue = document.getElementById("movie-select").value
@@ -101,22 +112,26 @@ const handleRandomizeBtn = () => {
 }
 
 //call functions
-fetchVideos(URL)
-.then(videos => populateDropdown(videos))
-.then(videos => videoRandomize(videos))
-.then(video => videoLoad(video))
 
+initialFetch()
 
 fetchVideos(savedVideos)
 .then(videos => loadSidebar(videos))
 
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
-document.getElementById("like").addEventListener("click", async () => {
-  await handleLike()
-  fetchVideos(savedVideos)
-  .then(videos => loadSidebar(videos))
+document.addEventListener("keydown", e => {
+  if (e.key === "p") {
+    videoPlay()
+  }
+  if (e.key === "r") {
+    initialFetch()
+  }
+  if (e.key === "l") {
+    loadSidebarAfterLike()
+  }
 })
+document.getElementById("like").addEventListener("click", loadSidebarAfterLike)
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 // document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
 // document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
