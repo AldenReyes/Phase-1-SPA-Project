@@ -4,9 +4,10 @@ Outline of functions
 2. DONE create a function that plays video on play button press
 3. DONE create a randomizer function that returns a random movie object when passed db.json
 4. DONE Connect html id = "randomizer" button to randomizer function
-5. Create another "like" button that saves a video to a sidebar with an id of "saved-videos"
+5. DONE Create another "like" button that saves a video to a sidebar with an id of "saved-videos"
 6. After clicking a video on the side bar, populate main info + video element with video selected
 7. DONE Connect movie select dropdown to allow for users to adjust the video returned from randomizer button to a specific movie with the default behavior being all movies
+8. Delete button on liked videos
 */
 const URL = [
   "http://localhost:3000/clips",
@@ -71,20 +72,25 @@ const loadSidebar = (videos) => {
 })
   return videos
 }
+
 // handlers
 const handleLike = async () => {
-fetch(savedVideos, {
-  method: "POST",
-  headers: {
-    "Accept": "application/json",
-    "Content-type": "application/json"
-  },
-  body: JSON.stringify(videoOnPage)
+  try {
+    const response = await fetch(savedVideos, {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify(videoOnPage)
 })
-.then(res => res.json())
-.then(loadSidebar(await fetchVideos(savedVideos)))
-.catch(() => alert("You've already added this clip to your liked videos!"))
+  const savedVideo = await response.json()
+  console.log(savedVideo)
+} catch (error) {
+  alert("You've already added this clip to your liked videos!")
 }
+}
+
 
 const handleRandomizeBtn = () => {
   const selectedNameValue = document.getElementById("movie-select").value
@@ -106,7 +112,11 @@ fetchVideos(savedVideos)
 
 //event listeners
 document.getElementById("play").addEventListener("click", videoPlay)
-document.getElementById("like").addEventListener("click", handleLike)
+document.getElementById("like").addEventListener("click", async () => {
+  await handleLike()
+  fetchVideos(savedVideos)
+  .then(videos => loadSidebar(videos))
+})
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 // document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
 // document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
