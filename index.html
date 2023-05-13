@@ -12,10 +12,10 @@
     <link rel="manifest" href="/images/favicon/site.webmanifest">
   </head>
   <body>
+    <header>
+      <h1 id="main-header">The Owen Wilson Wow Generator!</h1>
+    </header>
     <main>
-      <header>
-        <h1 id="main-header">The Owen Wilson Wow Generator!</h1>
-      </header>
       <div id="video">
         <div class="video-container">
           <video
@@ -25,43 +25,49 @@
           Your browser does not support the video tag, please update your
           browser
           </video>
-        <div id="video-info">
-          <h2></h2>
-        </div>
+          <div id="video-info">
+            <h2></h2>
+          </div>
         </div>
       </div>
-      <div>
         <div id="video-control-buttons">
           <button id="play" class="controls" type="button">▶</button>
           <button id="randomize" class="controls" type="button">
             Random Wow!
           </button>
-          <button id="like" class="controls" type="button">❤️</button>
-          <br>
+          <button id="like" class="controls" type="button">+ Save</button>
+          <br><br>
             <label for="by-movie">Randomize from:
               <select id="movie-select">
                 <option value="">All Movies - 91 total</option>
               </select>
             </label>
         </div>
-        <div class="img-container">
-        <img
+        <br><br>
+        <div class="img-saved-containers">
+          <div class="img-container">
+            <img
             id="poster"
             src=""
             alt="Movie Poster"
             width="auto"
             height="340px"
-        />
-        <div id="saved-videos-container">
-          <h2>Saved Wows</h2>
-          <ul>
-          </ul>
-        </div>
-      </div>
-    <div class="bottom">
-      <footer>Disclaimer: This website includes copyrighted material, such as movie posters and video clips, which are the property of their respective owners. The use of such material is solely for educational purposes and is not intended to infringe upon any copyrights. This website is not affiliated with, endorsed by, or sponsored by the owners of the copyrighted material. All rights to the copyrighted material belong to their respective owners.</footer>
-    </div>
-  </main>
-    <script defer src="script.js"></script>
+            />
+          </div>
+          <div id="saved-videos-container">
+            <h2>Saved Wows</h2>
+            <ul>
+            </ul>
+            <div id="clear-button">
+              <button class="controls-side" >Clear List</button>
+            </div>
+          </div>
+        </main>
+        <footer class="footer-disclaimer">
+          <p class="footer-text">
+            Disclaimer: This website includes copyrighted material, such as movie posters and video clips, which are the property of their respective owners. The use of such material is solely for educational purposes and is not intended to infringe upon any copyrights. This website is not affiliated with, endorsed by, or sponsored by the owners of the copyrighted material. All rights to the copyrighted material belong to their respective owners.
+          </p>  
+        </footer>
+  <script defer src="script.js"></script>
   </body>
 </html>
