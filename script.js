@@ -62,15 +62,18 @@ const populateDropdown = (URL) => {
   return URL
 }
 
+const createSidebarElement = (video) => {
+  const entry = document.createElement("button")
+  const sidebarElement = document.getElementById("saved-videos-container").querySelector("ul")
+  entry.setAttribute("id", `${video.id}`)
+  entry.textContent = `${video.movie} - #${video.current_wow_in_movie}`
+  entry.setAttribute("class", "controls-side")
+  sidebarElement.appendChild(entry)
+}
+
 const loadSidebar = (videos) => {
-  const sidebar = document.getElementById("saved-videos-container").querySelector("ul")
-  sidebar.innerHTML = ""
-  videos.map(video =>  {
-    const entry = document.createElement("li")
-    entry.setAttribute("id", `${video.id}`)
-    entry.textContent = `${video.movie} - #${video.current_wow_in_movie}`
-    sidebar.appendChild(entry)
-})
+  document.getElementById("saved-videos-container").querySelector("ul").innerHTML = ""
+  videos.map(video =>  createSidebarElement(video))
   return videos
 }
 
@@ -80,6 +83,7 @@ const initialFetch = () => {
   .then(videos => videoRandomize(videos))
   .then(video => videoLoad(video))
 }
+
 
 const loadSidebarAfterLike = async () => {
     await handleLike()
@@ -126,13 +130,12 @@ const handleKeydown = (e) => {
 //call functions
 
 initialFetch()
-
 fetchVideos(savedVideos)
 .then(videos => loadSidebar(videos))
 
 //event listeners
-document.getElementById("play").addEventListener("click", videoPlay)
 document.addEventListener("keydown", handleKeydown)
+document.getElementById("play").addEventListener("click", videoPlay)
 document.getElementById("like").addEventListener("click", loadSidebarAfterLike)
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 // document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
