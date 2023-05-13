@@ -83,7 +83,11 @@ const createSidebarElement = (video) => {
   entry.textContent = `${video.movie} - #${video.current_wow_in_movie}`
   entry.setAttribute("class", "controls-side")
   sidebarElement.appendChild(entry)
-  entry.addEventListener("click", (e) => fetchVideos(`${URL}/${e.target.id}`).then(video => videoLoad(video)))
+  entry.addEventListener("click", (e) => {
+    fetchVideos(`${URL}/${e.target.id}`)
+    .then(video => videoLoad(video))
+    .then(videoPlay)
+  })
 }
 
 const loadSidebar = (videos) => {
