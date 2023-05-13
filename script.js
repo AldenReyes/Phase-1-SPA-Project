@@ -85,13 +85,14 @@ const initialFetch = () => {
 }
 
 
-const loadSidebarAfterLike = async () => {
+
+// handlers
+const handleSidebarAfterLike = async () => {
     await handleLike()
     fetchVideos(savedVideos)
     .then(videos => loadSidebar(videos))
 }
 
-// handlers
 const handleLike = async () => {
   try {
     const response = await fetch(savedVideos, {
@@ -123,7 +124,7 @@ const handleKeydown = (e) => {
     handleRandomizeBtn()
   }
   if (e.key === "l") {
-    loadSidebarAfterLike()
+    handleSidebarAfterLike()
   }
 }
 
@@ -136,7 +137,7 @@ fetchVideos(savedVideos)
 //event listeners
 document.addEventListener("keydown", handleKeydown)
 document.getElementById("play").addEventListener("click", videoPlay)
-document.getElementById("like").addEventListener("click", loadSidebarAfterLike)
+document.getElementById("like").addEventListener("click", handleSidebarAfterLike)
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 // document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
 // document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
