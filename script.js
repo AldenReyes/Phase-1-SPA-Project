@@ -62,6 +62,20 @@ const populateDropdown = (URL) => {
   return URL
 }
 
+const videoDelete = async (id) => {
+  try {
+    await fetch(`http://localhost:3000/savedclips/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Content-type": "application/json"
+      },
+    })
+  } catch (error) {
+    alert("Could not delete, please try again!")
+  }
+}
+
 const createSidebarElement = (video) => {
   const entry = document.createElement("button")
   const sidebarElement = document.getElementById("saved-videos-container").querySelector("ul")
@@ -69,6 +83,7 @@ const createSidebarElement = (video) => {
   entry.textContent = `${video.movie} - #${video.current_wow_in_movie}`
   entry.setAttribute("class", "controls-side")
   sidebarElement.appendChild(entry)
+  entry.addEventListener("click", (e) => fetchVideos(`${URL}/${e.target.id}`).then(video => videoLoad(video)))
 }
 
 const loadSidebar = (videos) => {
