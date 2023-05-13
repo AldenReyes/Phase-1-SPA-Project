@@ -1,5 +1,5 @@
 :root {
---primary-font: Helvetica, sans-serif;
+  --primary-font: Helvetica, sans-serif;
 }
 
 * {
@@ -10,45 +10,80 @@
   color: #4c4f69;
 }
 
-body {
-  background-color: #eff1f5	;
-  min-height: 100vh;
-}
-
 main {
-  justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
+body {
+  background-color: #eff1f5;
+  min-height: 100vh;
+}
+
+select {
+  appearance: none;
+  background: #ccd0da;
+  border-radius: 5px;
+}
+
+button:hover {
+  box-shadow: 0 0 1em rgba(210, 15, 57, 0.8);
+}
+
 footer {
-  align-self: flex-end;
-  position: relative;
-  font-size:x-small;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
-  margin: 22% 24% 1% 24%;
+}
+
+.footer-text {
+  display: inline-block;
+  font-size: 8pt;
+  text-transform: capitalize;
+  overflow: hidden;
+  min-width: 500px;
+  width: 50%;
+}
+.img-saved-containers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .controls {
   border-radius: 5px;
-  background-color:#ccd0da;
-  font-size: 16px;
-  padding: 2px 15px
+  background-color: #ccd0da;
+  font-size: 14px;
+  padding: 2px 12px;
 }
 
-button:hover {
-    box-shadow: 0 0 1em rgba(210, 15, 57, 0.8);
+.controls#play {
+  font-size: 13px;
+}
+
+.controls-side {
+  border-radius: 5px;
+  background-color: #dce0e8;
+  font-size: 14px;
+  padding: 2px 12px;
+}
+
+#clear-button {
+  text-align: center;
+  margin-top: 0%;
 }
 
 #poster {
   float: left;
-  margin-left: 5%;
   padding: 0.5em;
   border-radius: 20px;
 }
 
 #main-header {
+  position: relative;
   text-align: center;
 }
 
@@ -57,8 +92,6 @@ button:hover {
   width: 226px;
   overflow-y: auto;
   float: right;
-  margin-top: 6px;
-  margin-right: 5%;
   background-color: #ccd0da;
   padding: 0.5em;
   border-radius: 20px;
@@ -69,7 +102,7 @@ button:hover {
 }
 
 #saved-videos-container > ul {
-  text-align: center;
+  text-align: left;
   padding: 1em;
 }
 
