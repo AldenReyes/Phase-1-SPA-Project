@@ -132,18 +132,6 @@ const handleRandomizeBtn = () => {
     .then(videoPlay);
 };
 
-const handleKeydown = (e) => {
-  if (e.key === "p") {
-    videoPlay();
-  }
-  if (e.key === "r") {
-    handleRandomizeBtn();
-  }
-  if (e.key === "s") {
-    handleSidebarAfterSave();
-  }
-};
-
 const showHotkeys = () => {
   document
     .getElementById("hotkeys")
@@ -162,6 +150,21 @@ const handleClear = () => {
   fetchVideos(savedVideos)
     .then((video) => deleteAllFromDB(video))
     .then(clearSidebar);
+};
+
+const handleKeydown = (e) => {
+  if (e.key === "p") {
+    videoPlay();
+  }
+  if (e.key === "r") {
+    handleRandomizeBtn();
+  }
+  if (e.key === "s") {
+    handleSidebarAfterSave();
+  }
+  if (e.key === "c") {
+    handleClear();
+  }
 };
 
 //call functions on page load
