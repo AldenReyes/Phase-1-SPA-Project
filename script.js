@@ -103,6 +103,9 @@ const initialFetch = () => {
   .then(video => videoLoad(video))
 }
 
+const deleteAllFromDB = (videos) => {
+  videos.map(video => videoDelete(video.id))
+}
 
 
 // handlers
@@ -114,15 +117,14 @@ const handleSidebarAfterSave = async () => {
 
 const handleSave = async () => {
   try {
-    const response = await fetch(savedVideos, {
-    method: "POST",
-    headers: {
-      "Accept": "application/json",
-      "Content-type": "application/json"
+    await fetch(savedVideos, {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-type": "application/json"
     },
     body: JSON.stringify(videoOnPage)
 })
-  const savedVideo = await response.json()
 } catch (error) {
   alert("You've already added this clip to your liked videos!")
 }}
@@ -158,8 +160,13 @@ const hideHotkeys = () => {
   .querySelector("span")
   .setAttribute("hidden", "")
 }
-//call functions
 
+const handleClear = () => {
+  fetchVideos(savedVideos)
+  .then(video => deleteAllFromDB(video))
+}
+
+//call functions
 initialFetch()
 fetchVideos(savedVideos)
 .then(videos => loadSidebar(videos))
@@ -171,3 +178,5 @@ document.getElementById("like").addEventListener("click", handleSidebarAfterSave
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
 document.getElementById("hotkeys").addEventListener("mouseenter",showHotkeys)
 document.getElementById("hotkeys").addEventListener("mouseleave",hideHotkeys)
+document.getElementById("clear-button").querySelector("button").addEventListener("click", handleClear)
+
