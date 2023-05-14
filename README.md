@@ -2,8 +2,6 @@
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
 <p align="center">
     <img src="images/Owen_Wilson_Cannes_2011_Wiki.png" alt="Owen Wilson at the Cannes Film Festival 2011">
@@ -116,7 +114,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Alden Reyes - Aldenrey@gmail.com
+Alden Reyes - Aldenrey@gmail.com - <a href="https://www.linkedin.com/in/alden-reyes">LinkedIn</a>
 
 Project Link: [The Owen Wilson Wow Generator](https://github.com/AldenReyes/phase-1-SPA-Project-Owen-Wilson-Wow-Generator)
 
@@ -148,7 +146,7 @@ Project Link: [The Owen Wilson Wow Generator](https://github.com/AldenReyes/phas
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/AldenReyes/phase-1-SPA-Project-Owen-Wilson-Wow-Generator/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: www.linkedin.com/in/alden-reyes
+[linkedin-url]: https://www.linkedin.com/in/alden-reyes
 [webpage-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
