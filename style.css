@@ -45,6 +45,7 @@ footer {
   text-transform: capitalize;
   overflow: hidden;
   min-width: 500px;
+  max-width: 550px;
   width: 50%;
 }
 
