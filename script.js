@@ -147,6 +147,17 @@ const handleKeydown = (e) => {
   }
 }
 
+const showHotkeys = () => {
+  document.getElementById("hotkeys")
+  .querySelector("span")
+  .removeAttribute("hidden")
+}
+
+const hideHotkeys = () => {
+  document.getElementById("hotkeys")
+  .querySelector("span")
+  .setAttribute("hidden", "")
+}
 //call functions
 
 initialFetch()
@@ -158,5 +169,5 @@ document.addEventListener("keydown", handleKeydown)
 document.getElementById("play").addEventListener("click", videoPlay)
 document.getElementById("like").addEventListener("click", handleSidebarAfterSave)
 document.getElementById("randomize").addEventListener("click", handleRandomizeBtn)
-// document.getElementById("poster").addEventListener("mouseenter", (e) => console.log(e))
-// document.getElementById("poster").addEventListener("mouseleave", (e) => console.log(e))
+document.getElementById("hotkeys").addEventListener("mouseenter",showHotkeys)
+document.getElementById("hotkeys").addEventListener("mouseleave",hideHotkeys)

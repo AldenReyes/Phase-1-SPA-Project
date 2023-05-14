@@ -32,7 +32,7 @@ button:hover {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -69,6 +69,23 @@ footer {
   background-color: #dce0e8;
   font-size: 14px;
   padding: 2px 12px;
+}
+
+.hotkey-tooltip {
+  align-items: center;
+  text-align: left;
+  width: 85px;
+  min-height: 20px;
+  position: absolute;
+  z-index: 1;
+  top:150%;
+  margin-left: -22px;
+}
+
+#hotkeys {
+  position: relative;
+  font-size: 12px;
+  float: left;
 }
 
 #clear-button {

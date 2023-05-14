@@ -21,12 +21,17 @@
           <video
           id="video-player"
           src=""
-        >
+          >
           Your browser does not support the video tag, please update your
           browser
-          </video>
-          <div id="video-info">
-            <h2></h2>
+        </video>
+        <div id="video-info">
+          <div id="hotkeys">
+            <p>Hotkeys</p>
+            <span class="hotkey-tooltip" hidden="true">p - Play <br> r - Randomize
+              <br> s - Save</span>
+          </div>
+          <h2></h2>
           </div>
         </div>
       </div>
@@ -36,7 +41,8 @@
             Random Wow!
           </button>
           <button id="like" class="controls" type="button">+ Save</button>
-          <br><br>
+          <br>
+          <br>
             <label for="by-movie">Randomize from:
               <select id="movie-select">
                 <option value="">All Movies - 91 total</option>
