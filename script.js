@@ -184,5 +184,6 @@ document
   .getElementById("clear-button")
   .querySelector("button")
   .addEventListener("click", handleClear);
-document.getElementById("hotkeys").addEventListener("mouseenter", showHotkeys);
-document.getElementById("hotkeys").addEventListener("mouseleave", hideHotkeys);
+  document.getElementById("hotkeys").addEventListener("mouseenter", showHotkeys);
+  document.getElementById("hotkeys").addEventListener("mouseleave", hideHotkeys);
+  
