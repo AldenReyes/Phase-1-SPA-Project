@@ -167,7 +167,7 @@ const handleKeydown = (e) => {
   }
 };
 
-//call functions on page load
+//calls functions on initial load to populate page
 initialFetch();
 fetchVideos(savedVideos).then((videos) => loadSidebar(videos));
 
@@ -180,9 +180,9 @@ document
 document
   .getElementById("randomize")
   .addEventListener("click", handleRandomizeBtn);
-document.getElementById("hotkeys").addEventListener("mouseenter", showHotkeys);
-document.getElementById("hotkeys").addEventListener("mouseleave", hideHotkeys);
 document
   .getElementById("clear-button")
   .querySelector("button")
   .addEventListener("click", handleClear);
+document.getElementById("hotkeys").addEventListener("mouseenter", showHotkeys);
+document.getElementById("hotkeys").addEventListener("mouseleave", hideHotkeys);
