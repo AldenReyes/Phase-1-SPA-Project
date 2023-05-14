@@ -111,7 +111,7 @@ const handleSidebarAfterSave = async () => {
 
 const handleSave = async () => {
   try {
-    await fetch(savedVideos, {
+    const response = await fetch(savedVideos, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -119,6 +119,7 @@ const handleSave = async () => {
       },
       body: JSON.stringify(videoOnPage),
     });
+    const savedVideo = await response.json();
   } catch (error) {
     alert("You've already added this clip to your liked videos!");
   }
@@ -184,6 +185,5 @@ document
   .getElementById("clear-button")
   .querySelector("button")
   .addEventListener("click", handleClear);
-  document.getElementById("hotkeys").addEventListener("mouseenter", showHotkeys);
-  document.getElementById("hotkeys").addEventListener("mouseleave", hideHotkeys);
-  
+document.getElementById("hotkeys").addEventListener("mouseenter", showHotkeys);
+document.getElementById("hotkeys").addEventListener("mouseleave", hideHotkeys);
