@@ -35,7 +35,7 @@ const videoRandomize = (URL) => {
 const populateDropdown = (URL) => {
   const select = document.getElementById("movie-select");
   const uniqueNames = {};
-  URL.map((movie) => {
+  URL.forEach((movie) => {
     //if name is not unique, continue
     if (!uniqueNames[movie["movie"]]) {
       const option = document.createElement("option");
@@ -82,7 +82,7 @@ const loadSidebar = (videos) => {
   document
     .getElementById("saved-videos-container")
     .querySelector("ul").innerHTML = "";
-  videos.map((video) => createSidebarElement(video));
+  videos.forEach((video) => createSidebarElement(video));
   return videos;
 };
 
@@ -94,7 +94,7 @@ const initialFetch = () => {
 };
 
 const deleteAllFromDB = (videos) => {
-  videos.map((video) => videoDelete(video.id));
+  videos.forEach((video) => videoDelete(video.id));
 };
 
 const clearSidebar = () => {
