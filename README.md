@@ -8,11 +8,10 @@
 </p>
 <h2 align="center">The Owen Wilson Wow Generator</h2>
   <h3 align="center">
-    A generator of randomized Owen Wilson "wow"s courtesy of the Owen Wilson Wow Api (by Avi Mamenko)
+    A generator of randomized Owen Wilson "wow"s courtesy of the Owen Wilson Wow Api 
   </h3>
 <h6>(Image Attribution: Wikipedia, Georges Biard - Creative Commons 3.0, slight crop made)</h6>
   <p align="right">(<a href="#acknowledgments">See Acknowledgments</a>)</p>
-  <a href="https://youtube.com/">View Video Demo</a>
 
 ---
 
@@ -56,9 +55,10 @@ To get a local copy up and running follow these steps.
 
 <br>
 
-## Prerequisites
+### Prerequisites
 
-1. If you already have json-server, move to step 2, otherwise, please install [json-server](https://www.npmjs.com/package/json-server) by running the following command in your terminal.
+1. This webpage relies on json-server to serve data to it.
+If you already have json-server, move to step 2, otherwise, please install [json-server](https://www.npmjs.com/package/json-server) by running the following command in your terminal.
 
 - json-server installation
 
@@ -76,7 +76,7 @@ json-server --watch db.json
 
 ---
 
-## Installation
+### Installation
 
 1. Clone this repo to a folder on your computer using your method of choice, example using SSH:
    (after navigating to the folder you want to clone to)
@@ -100,7 +100,7 @@ const savedVideos = "[http://*insert your localhost:port here*/savedclips]";
 
 ---
 
-## Usage
+### Usage
 
 <img src="images/buttonbar.png">
 
